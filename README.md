@@ -38,6 +38,18 @@ https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom
 
 Link description: 
 
+Source 1: The 3 cell line HiChIP track was downloaded from the Cell Genomics paper (https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub). 
+GEO: GSE188405
+H3K27ac HiChIP and ATAC-seq tracks are downloaded from the GSE188405 with the file name "xxx.loops.csv.gz." and "xxx_merged.bed.gz" accordingly.
+The file then formatted to into UCSC acceptable files.
+Loop Color Details:
+Loop colors represent count frequencies, with darker colors indicating higher interaction frequencies
+
+
+Source 2: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246
+
+ChIP seq source:
+The ChiP-seq tracks of EBNA2, EBNA2, and EBNA3 were downloaded from the NCBI SRA (GSE47629 and GSE73887) and uploaded to the UCSC genome browser as custom tracks.
 
 
 
@@ -53,53 +65,3 @@ Link description:
 - https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296167
 
 - This dataset have some of interest dataset, trying to get bulked snATAC-seq and output as bigwig for display
-- `ArchR` package has function to do that, code in biowulf.
-
-```R
-
-# Goal: Using ArchR to convert sample sc-ATAC to Bigwig and display in UCSC genome broswer
-# Date: 10062025
-
-library(dplyr)
-library(ArchR)
-# ArchR::installExtraPackages()
-
-setwd('GSE296167_snATAC_track_convert_to_bigwig/')
-
-addArchRThreads(threads = 4) 
-addArchRGenome("hg38")
-
-inputFiles <- list.files('.')
-names(inputFiles) <- c("S1","S2","S3","S4")
-
-
-# carte ArchR file 
-ArrowFiles <- createArrowFiles(
-  inputFiles = inputFiles,
-  sampleNames = names(inputFiles),
-  minTSS = 4, #Dont set this too high because you can always increase later
-  minFrags = 1000, 
-  addTileMat = TRUE,
-  addGeneScoreMat = TRUE
-)
-
-#  Create an ArchRProject (choose an output folder)
-
-proj <- ArchRProject(ArrowFiles, outputDirectory = "ArchROut", copyArrows = TRUE)
-
-# Export one BigWig per Sample (pseudo-bulk coverage)
-bw <- getGroupBW(
-  ArchRProj = proj,
-  groupBy   = "Sample",
-  normMethod= "ReadsInTSS",     # recommended
-  tileSize  = 100,              # bin size; smaller = smoother but larger files
-  maxCells  = 1000              # subsample cells per group; increase if desired
-)
-
-# check, the outout will located in the work dictionary as folder
-bw
-
-```
-
-
-

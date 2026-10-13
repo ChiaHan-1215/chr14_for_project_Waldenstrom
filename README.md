@@ -32,8 +32,18 @@ We created a UCSC Genome Browser session to visualize the chromosome 14 variants
 - **Displayed region:** chr14:95,938,865–96,365,500
 - **Included tracks:** 5 SNPs annotations, gene annotations, HiChIP loops, ATAC-seq regions, and EBNA ChIP-seq tracks
 
+### Source 1. human lymphoma cell lines HiChIP: GSE228246
 
-### Source 1. HiChIP and ATAC-seq: GSE188405
+HiChIP data for `CUTLL1`, `DOHH2`, and `REC-1` were obtained from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246).
+
+FASTQ files were downloaded, replicates were combined, and the data were processed using HiC-Pro and FitChIP. The resulting loop files were prepared for visualization in the UCSC Genome Browser.
+
+**Loop-file location on the T-drive:**
+
+`/DCEG/Branches/LTG/Prokunina/HiChIP_ChIPseq_ATACseq_files/lymphoma_cell_GSE228246_hg19`
+
+
+### Source 2. HiChIP and ATAC-seq: GSE188405
 
 The `GM12878`, `Pancreas`, `COLO`, and `WM_SCR` HiChIP and ATAC-seq tracks were obtained from the dataset associated with this [Cell Genomics paper](https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub).
 
@@ -49,30 +59,29 @@ The downloaded files were converted into formats compatible with the UCSC Genome
 
 **Cell-line note:** According to the [GEO sample description](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5680738), `WM_SCR` refers to the human malignant melanoma cell line `WM-266-4`.
 
-### Source 2. human lymphoma cell lines HiChIP: GSE228246
-
-HiChIP data for `CUTLL1`, `DOHH2`, and `REC-1` were obtained from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246).
-
-FASTQ files were downloaded, replicates were combined, and the data were processed using HiC-Pro and FitChIP. The resulting loop files were prepared for visualization in the UCSC Genome Browser.
-
-**Loop-file location on the T-drive:**
-
-`/DCEG/Branches/LTG/Prokunina/HiChIP_ChIPseq_ATACseq_files/lymphoma_cell_GSE228246_hg19`
-
 ### Source 3. EBNA ChIP-seq
 
-ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following public datasets and uploaded to the UCSC Genome Browser as custom tracks:
+ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following published datasets and uploaded to the UCSC Genome Browser as custom tracks.
 
+#### EBNA2 and EBNA3: GSE47629
 
-[GSE47629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE47629) contains ChIP-seq experiments in the Mutu III Burkitt lymphoma cell line:
+[GSE47629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE47629) contains EBNA2 and EBNA3 ChIP-seq experiments and an input DNA control from the Mutu III Burkitt lymphoma cell line:
 
 - **GSM1153764:** Input DNA
 - **GSM1153765:** EBNA2 ChIP-seq
-- **GSM1153766:** EBNA3 ChIP-seq
+- **GSM1153766:** EBNA3 ChIP-seq, using an antibody that recognizes EBNA3A, EBNA3B, and EBNA3C
+
+**Associated publication:**
+
+McClellan MJ et al. (2013). [Modulation of Enhancer Looping and Differential Gene Targeting by Epstein-Barr Virus Transcription Factors Directs Cellular Reprogramming](https://doi.org/10.1371/journal.ppat.1003636). *PLOS Pathogens*, 9(9), e1003636.
 
 #### EBNA1: GSE73887
 
-[GSE73887](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73887) contains EBNA1 ChIP-seq and corresponding IgG controls in Raji, Mutu I, LCL, and C666-1 cells.
+[GSE73887](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73887) contains EBNA1 ChIP-seq and corresponding IgG controls in Raji, Mutu I, LCL, and C666-1 cells. The series also includes RNA-seq experiments examining the effects of EBNA1 knockdown in LCLs.
+
+**Associated publication:**
+
+Tempera I et al. (2016). [Identification of MEF2B, EBF1, and IL6R as Direct Gene Targets of Epstein-Barr Virus (EBV) Nuclear Antigen 1 Critical for EBV-Infected B-Lymphocyte Survival](https://doi.org/10.1128/JVI.02318-15). *Journal of Virology*, 90(1), 345–355.
 
 **File location on the L-drive:**
 

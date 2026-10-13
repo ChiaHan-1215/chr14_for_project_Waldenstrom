@@ -32,13 +32,16 @@ T-drive location: `/DCEG/Branches/LTG/Prokunina/WaldenstromMacroglobulinemia`
 
 ### Results:
 
+- HiChIP/ChIP-seq data display on UCSC genome broswer
+
+https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom
+
+Link description: 
+
 
 
 
 ### Future direction:
-
-- Extracted some cell of interest around target variants 
-https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom
 
 - Search B cell lymphoma HiCHIP data, list link of interest:
 

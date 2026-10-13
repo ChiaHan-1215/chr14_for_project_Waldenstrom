@@ -45,7 +45,7 @@ The downloaded files were converted into formats compatible with the UCSC Genome
 
 **File location on the T-drive:**
 
-`/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/primary_tissue_cellline_GSE`
+`/DCEG/Branches/LTG/Prokunina/HiChIP_ChIPseq_ATACseq_files/primary_tissue_cellline_GSE`
 
 **Cell-line note:** According to the [GEO sample description](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5680738), `WM_SCR` refers to the human malignant melanoma cell line `WM-266-4`.
 
@@ -57,14 +57,24 @@ FASTQ files were downloaded, replicates were combined, and the data were process
 
 **Loop-file location on the T-drive:**
 
-`/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/lymphoma_cell_GSE228246_hg19`
+`/DCEG/Branches/LTG/Prokunina/HiChIP_ChIPseq_ATACseq_files/lymphoma_cell_GSE228246_hg19`
 
 ### Source 3. EBNA ChIP-seq
 
 ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following public datasets and uploaded to the UCSC Genome Browser as custom tracks:
 
-- [GSE47629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE47629)
-- [GSE73887](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73887)
+
+[GSE47629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE47629) contains ChIP-seq experiments in the Mutu III Burkitt lymphoma cell line:
+
+- **GSM1153764:** Input DNA
+- **GSM1153765:** EBNA2 ChIP-seq
+- **GSM1153766:** EBNA3 ChIP-seq
+
+The EBNA3 experiment used a pan-specific antibody recognizing EBNA3A, EBNA3B, and EBNA3C. This assay should therefore be described as pan-EBNA3 ChIP-seq.
+
+#### EBNA1: GSE73887
+
+[GSE73887](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73887) contains EBNA1 ChIP-seq and corresponding IgG controls in Raji, Mutu I, LCL, and C666-1 cells.
 
 **File location on the L-drive:**
 

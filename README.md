@@ -49,7 +49,7 @@ The downloaded files were converted into formats compatible with the UCSC Genome
 
 **Cell-line note:** According to the [GEO sample description](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5680738), `WM_SCR` refers to the human malignant melanoma cell line `WM-266-4`.
 
-### Source 2. HiChIP: GSE228246
+### Source 2. human lymphoma cell lines HiChIP: GSE228246
 
 HiChIP data for `CUTLL1`, `DOHH2`, and `REC-1` were obtained from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246).
 

@@ -70,8 +70,6 @@ ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following pub
 - **GSM1153765:** EBNA2 ChIP-seq
 - **GSM1153766:** EBNA3 ChIP-seq
 
-The EBNA3 experiment used a pan-specific antibody recognizing EBNA3A, EBNA3B, and EBNA3C. This assay should therefore be described as pan-EBNA3 ChIP-seq.
-
 #### EBNA1: GSE73887
 
 [GSE73887](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73887) contains EBNA1 ChIP-seq and corresponding IgG controls in Raji, Mutu I, LCL, and C666-1 cells.

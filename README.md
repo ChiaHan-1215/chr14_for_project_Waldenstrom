@@ -1,69 +1,92 @@
-# chr14_for_project_Waldenstrom
+# Chromosome 14 Analysis for the Waldenstrom Project
 
-### Goal: extract Genotype files from CCLE, GTEx, CARD for finding rare variants for Waldenstrom project
+## Project goal
 
+Extract genotype data from CCLE, GTEx, and CARD to investigate candidate rare variants on chromosome 14 for the Waldenstrom macroglobulinemia project.
 
+## Variants of interest
 
-the rare variants are located in chr14
+| rsID | Position (hg38_HC) | Allele frequencies |
+|---|---|---|
+| rs149482608 | chr14:95525224 | A = 0.998, G = 0.002 |
+| rs117972357 | chr14:95577209 | G = 0.996, A = 0.004 |
+| rs117410836 | chr14:95585637 | T = 0.971, C = 0.029 |
+| rs561799741 | chr14:95763084 | G = 0.998, A = 0.002 |
+| rs534710671 | chr14:95845144 | A = 0.998, C = 0.002 |
 
-```
-RS_Number      Position (hg38_HC)     Allele Frequency
-rs149482608    chr14:95525224 A=0.998, G=0.002
-rs117972357    chr14:95577209 G=0.996, A=0.004
-rs117410836    chr14:95585637 T=0.971, C=0.029
-rs561799741    chr14:95763084 G=0.998, A=0.002
-rs534710671    chr14:95845144 A=0.998, C=0.002
-```
+## Project location
 
+The project folder is located on the T-drive:
 
-### files: 
+`/DCEG/Branches/LTG/Prokunina/WaldenstromMacroglobulinemia`
 
-T-drive location: `/DCEG/Branches/LTG/Prokunina/WaldenstromMacroglobulinemia`
-The folder contains 
+## Code and analysis
 
-### Code: 
+- Extract BAM slices from CCLE data using `samtools` on Terra.bio.
 
-- Extract BAM slice from CCLE using samtools in Terra.bio 
+## Results and visualization
 
+HiChIP, ATAC-seq, and ChIP-seq tracks are available in the following UCSC Genome Browser session:
 
+[View the chromosome 14 Waldenstrom project session](https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom)
 
-### Results:
+**Genome-build note:** The variant positions above are labeled `hg38_HC`, while the UCSC session is labeled `hg19`. Confirm coordinate compatibility before comparing variants with the displayed tracks.
 
-- HiChIP/ChIP-seq data display on UCSC genome broswer
+### 1. HiChIP and ATAC-seq: GSE188405
 
-https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom
+The `GM12878`, `Pancreas`, `COLO`, and `WM_SCR` HiChIP tracks were obtained from the dataset associated with this [Cell Genomics paper](https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub).
 
-Link description: 
+- **Data source:** [GSE188405](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188405)
+- **H3K27ac HiChIP files:** `xxx.loops.csv.gz`
+- **ATAC-seq files:** `xxx_merged.bed.gz`
 
-Source 1: The `GM12878`, `Pancreas`, `COLO`, `WM_SCR` HiChIP track was downloaded from the [Cell Genomics paper](https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub), data are stored in [GSE188405](GSE188405). Downloaded files are store in T-drive: `/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/primary_tissue_cellline_GSE`
+The downloaded files were converted into formats compatible with the UCSC Genome Browser.
 
-H3K27ac HiChIP and ATAC-seq tracks are downloaded from the GEO with the file name "xxx.loops.csv.gz." and "xxx_merged.bed.gz" accordingly, the file then formatted to into UCSC acceptable files.
+**File location on the T-drive:**
 
-Note: cell name `WM_SCR` is the human malignant melanoma cell line named `WM-266-4` according to their [desription](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5680738)
+`/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/primary_tissue_cellline_GSE`
 
+**Cell-line note:** According to the [GEO sample description](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5680738), `WM_SCR` refers to the human malignant melanoma cell line `WM-266-4`.
 
-Source 2: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246
+### 2. HiChIP: GSE228246
 
-The HiChIP `CUTLL1`, `DOHH2`, `REC-1` are downloaded from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246), fastqs are dwonload and replicated are combined, dataset and processed with HiC-pro with FitChIP, the loop files are stored in T-drive: `/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/lymphoma_cell_GSE228246_hg19`
+HiChIP data for `CUTLL1`, `DOHH2`, and `REC-1` were obtained from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246).
 
-ChIP seq source:
-The ChiP-seq tracks of EBNA1, EBNA2, and EBNA3 were downloaded from the NCBI SRA (GSE47629 and GSE73887) and uploaded to the UCSC genome browser as custom tracks. The files are stored in L-drive:
+FASTQ files were downloaded, replicates were combined, and the data were processed using HiC-Pro and FitChIP.
+
+**Loop-file location on the T-drive:**
+
+`/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/lymphoma_cell_GSE228246_hg19`
+
+### 3. EBNA ChIP-seq
+
+ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following public datasets and uploaded to the UCSC Genome Browser as custom tracks:
+
+- [GSE47629](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE47629)
+- [GSE73887](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73887)
+
+**File location on the L-drive:**
+
 `/LTG_02/Prokunina Lab/Paper Files/Completed/2025 Burkitt GWAS_Leukemia/Raw data/ChiaHan/Public_EBV_binding_ChIP`
 
+### Loop colors
 
-Loop Color Details:
-Loop colors represent count frequencies, with darker colors indicating higher interaction frequencies
+Loop colors represent interaction counts. Darker colors indicate higher interaction frequencies.
 
+## Future directions
 
-### Future direction:
+### Additional B-cell lymphoma HiChIP data
 
-- Search B cell lymphoma HiCHIP data, list link of interest:
+Review additional B-cell lymphoma HiChIP datasets for inclusion in the analysis.
 
-- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136090
+- **Dataset of interest:** [GSE136090](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136090)
 
+### Single-cell RNA-seq and ATAC-seq data from Waldenstrom patients
 
-**sc-RNA/atac for Waldenstrom patient**
+Explore [GSE296167](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296167) for relevant single-cell RNA-seq and ATAC-seq data.
 
-- https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296167
+Planned steps:
 
-- This dataset have some of interest dataset, trying to get bulked snATAC-seq and output as bigwig for display
+1. Identify relevant samples and available snATAC-seq files.
+2. Aggregate snATAC-seq data to generate signal tracks.
+3. Export the tracks as bigWig files for visualization in the UCSC Genome Browser.

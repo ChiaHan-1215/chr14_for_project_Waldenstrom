@@ -19,10 +19,7 @@ rs534710671    chr14:95845144 A=0.998, C=0.002
 ### files: 
 
 T-drive location: `/DCEG/Branches/LTG/Prokunina/WaldenstromMacroglobulinemia`
-
-
-
-
+The folder contains 
 
 ### Code: 
 
@@ -38,19 +35,24 @@ https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom
 
 Link description: 
 
-Source 1: The 3 cell line HiChIP track was downloaded from the Cell Genomics paper (https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub). 
-GEO: GSE188405
-H3K27ac HiChIP and ATAC-seq tracks are downloaded from the GSE188405 with the file name "xxx.loops.csv.gz." and "xxx_merged.bed.gz" accordingly.
-The file then formatted to into UCSC acceptable files.
-Loop Color Details:
-Loop colors represent count frequencies, with darker colors indicating higher interaction frequencies
+Source 1: The `GM12878`, `Pancreas`, `COLO`, `WM_SCR` HiChIP track was downloaded from the [Cell Genomics paper](https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub), data are stored in [GSE188405](GSE188405). Downloaded files are store in T-drive: `/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/primary_tissue_cellline_GSE`
+
+H3K27ac HiChIP and ATAC-seq tracks are downloaded from the GEO with the file name "xxx.loops.csv.gz." and "xxx_merged.bed.gz" accordingly, the file then formatted to into UCSC acceptable files.
+
+Note: cell name `WM_SCR` is the human malignant melanoma cell line named `WM-266-4` according to their [desription](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5680738)
 
 
 Source 2: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246
 
-ChIP seq source:
-The ChiP-seq tracks of EBNA2, EBNA2, and EBNA3 were downloaded from the NCBI SRA (GSE47629 and GSE73887) and uploaded to the UCSC genome browser as custom tracks.
+The HiChIP `CUTLL1`, `DOHH2`, `REC-1` are downloaded from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246), fastqs are dwonload and replicated are combined, dataset and processed with HiC-pro with FitChIP, the loop files are stored in T-drive: `/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/lymphoma_cell_GSE228246_hg19`
 
+ChIP seq source:
+The ChiP-seq tracks of EBNA1, EBNA2, and EBNA3 were downloaded from the NCBI SRA (GSE47629 and GSE73887) and uploaded to the UCSC genome browser as custom tracks. The files are stored in L-drive:
+`/LTG_02/Prokunina Lab/Paper Files/Completed/2025 Burkitt GWAS_Leukemia/Raw data/ChiaHan/Public_EBV_binding_ChIP`
+
+
+Loop Color Details:
+Loop colors represent count frequencies, with darker colors indicating higher interaction frequencies
 
 
 ### Future direction:

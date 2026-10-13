@@ -76,7 +76,7 @@ Loop colors represent interaction counts. Darker colors indicate higher interact
 
 ## Future directions
 
-### Additional B-cell lymphoma HiChIP data
+### Additional B-cell lymphoma ChIPseq data
 
 Review additional B-cell lymphoma HiChIP datasets for inclusion in the analysis.
 

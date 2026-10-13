@@ -2,7 +2,7 @@
 
 ## Project goal
 
-Extract genotype data from CCLE, GTEx, and CARD to investigate candidate rare variants on chromosome 14 for the Waldenstrom macroglobulinemia project.
+The goal is to extract genotype data from CCLE, GTEx, and CARD to investigate candidate rare variants on chromosome 14 for the Waldenstrom macroglobulinemia project.
 
 ## Variants of interest
 
@@ -22,19 +22,21 @@ The project folder is located on the T-drive:
 
 ## Code and analysis
 
-- Extract BAM slices from CCLE data using `samtools` on Terra.bio.
+We created a UCSC Genome Browser session to visualize the chromosome 14 variants alongside gene annotations, HiChIP loops, ATAC-seq regions, and EBNA ChIP-seq tracks. This integrated view supports exploration of the variants and their surrounding regulatory context.
 
 ## Results and visualization
 
-HiChIP, ATAC-seq, and ChIP-seq tracks are available in the following UCSC Genome Browser session:
+[View the chromosome 14 Waldenstrom project session in the UCSC Genome Browser](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr14%3A95938865%2D96365500&hgsid=4200191159_qGq30zvkYUHX0nJYLL75EAYOfPcb)
 
-[View the chromosome 14 Waldenstrom project session](https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom)
+- **Genome assembly:** GRCh37/hg19
+- **Displayed region:** chr14:95,938,865–96,365,500
+- **Included tracks:** SNP annotations, gene annotations, HiChIP loops, ATAC-seq regions, and EBNA ChIP-seq tracks
 
-**Genome-build note:** The variant positions above are labeled `hg38_HC`, while the UCSC session is labeled `hg19`. Confirm coordinate compatibility before comparing variants with the displayed tracks.
+**Genome-build note:** The variant table above lists `hg38_HC` coordinates, whereas the browser session uses `hg19`. Confirm that coordinates refer to the same genome assembly before comparing variant positions with other tracks.
 
 ### 1. HiChIP and ATAC-seq: GSE188405
 
-The `GM12878`, `Pancreas`, `COLO`, and `WM_SCR` HiChIP tracks were obtained from the dataset associated with this [Cell Genomics paper](https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub).
+The `GM12878`, `Pancreas`, `COLO`, and `WM_SCR` HiChIP and ATAC-seq tracks were obtained from the dataset associated with this [Cell Genomics paper](https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub).
 
 - **Data source:** [GSE188405](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE188405)
 - **H3K27ac HiChIP files:** `xxx.loops.csv.gz`
@@ -52,7 +54,7 @@ The downloaded files were converted into formats compatible with the UCSC Genome
 
 HiChIP data for `CUTLL1`, `DOHH2`, and `REC-1` were obtained from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246).
 
-FASTQ files were downloaded, replicates were combined, and the data were processed using HiC-Pro and FitChIP.
+FASTQ files were downloaded, replicates were combined, and the data were processed using HiC-Pro and FitChIP. The resulting loop files were prepared for visualization in the UCSC Genome Browser.
 
 **Loop-file location on the T-drive:**
 
@@ -68,6 +70,20 @@ ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following pub
 **File location on the L-drive:**
 
 `/LTG_02/Prokunina Lab/Paper Files/Completed/2025 Burkitt GWAS_Leukemia/Raw data/ChiaHan/Public_EBV_binding_ChIP`
+
+### 4. SNP annotations
+
+The custom track `chr14_snps` marks the five variants of interest:
+
+- rs149482608
+- rs117972357
+- rs117410836
+- rs561799741
+- rs534710671
+
+The track is displayed in **Pack** mode, with each variant labeled by its rsID. Viewing these SNPs alongside the other tracks helps assess their positions relative to genes, accessible chromatin, chromatin interactions, and EBNA-binding regions.
+
+The **dbSNP 155** track is also enabled to provide additional variant annotations for the region.
 
 ### Loop colors
 

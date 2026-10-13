@@ -30,11 +30,10 @@ We created a UCSC Genome Browser session to visualize the chromosome 14 variants
 
 - **Genome assembly:** GRCh37/hg19
 - **Displayed region:** chr14:95,938,865–96,365,500
-- **Included tracks:** SNP annotations, gene annotations, HiChIP loops, ATAC-seq regions, and EBNA ChIP-seq tracks
+- **Included tracks:** 5 SNPs annotations, gene annotations, HiChIP loops, ATAC-seq regions, and EBNA ChIP-seq tracks
 
-**Genome-build note:** The variant table above lists `hg38_HC` coordinates, whereas the browser session uses `hg19`. Confirm that coordinates refer to the same genome assembly before comparing variant positions with other tracks.
 
-### 1. HiChIP and ATAC-seq: GSE188405
+### Source 1. HiChIP and ATAC-seq: GSE188405
 
 The `GM12878`, `Pancreas`, `COLO`, and `WM_SCR` HiChIP and ATAC-seq tracks were obtained from the dataset associated with this [Cell Genomics paper](https://www.sciencedirect.com/science/article/pii/S2666979X22001409?via%3Dihub).
 
@@ -50,7 +49,7 @@ The downloaded files were converted into formats compatible with the UCSC Genome
 
 **Cell-line note:** According to the [GEO sample description](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM5680738), `WM_SCR` refers to the human malignant melanoma cell line `WM-266-4`.
 
-### 2. HiChIP: GSE228246
+### Source 2. HiChIP: GSE228246
 
 HiChIP data for `CUTLL1`, `DOHH2`, and `REC-1` were obtained from [GSE228246](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE228246).
 
@@ -60,7 +59,7 @@ FASTQ files were downloaded, replicates were combined, and the data were process
 
 `/DCEG/Branches/LTG/Prokunina/HiChIP_loop_calling_files/lymphoma_cell_GSE228246_hg19`
 
-### 3. EBNA ChIP-seq
+### Source 3. EBNA ChIP-seq
 
 ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following public datasets and uploaded to the UCSC Genome Browser as custom tracks:
 
@@ -70,20 +69,6 @@ ChIP-seq tracks for EBNA1, EBNA2, and EBNA3 were obtained from the following pub
 **File location on the L-drive:**
 
 `/LTG_02/Prokunina Lab/Paper Files/Completed/2025 Burkitt GWAS_Leukemia/Raw data/ChiaHan/Public_EBV_binding_ChIP`
-
-### 4. SNP annotations
-
-The custom track `chr14_snps` marks the five variants of interest:
-
-- rs149482608
-- rs117972357
-- rs117410836
-- rs561799741
-- rs534710671
-
-The track is displayed in **Pack** mode, with each variant labeled by its rsID. Viewing these SNPs alongside the other tracks helps assess their positions relative to genes, accessible chromatin, chromatin interactions, and EBNA-binding regions.
-
-The **dbSNP 155** track is also enabled to provide additional variant annotations for the region.
 
 ### Loop colors
 

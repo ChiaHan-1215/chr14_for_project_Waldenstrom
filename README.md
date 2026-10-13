@@ -2,6 +2,8 @@
 
 ### Goal: extract Genotype files from CCLE, GTEx, CARD for finding rare variants for Waldenstrom project
 
+
+
 the rare variants are located in chr14
 
 ```
@@ -13,11 +15,25 @@ rs561799741    chr14:95763084 G=0.998, A=0.002
 rs534710671    chr14:95845144 A=0.998, C=0.002
 ```
 
+
+### files: 
+
+T-drive location: `/DCEG/Branches/LTG/Prokunina/WaldenstromMacroglobulinemia`
+
+
+
+
+
 ### Code: 
 
 - Extract BAM slice from CCLE using samtools in Terra.bio 
 
-**********
+
+
+### Results:
+
+
+
 
 ### Future direction:
 
@@ -28,7 +44,9 @@ https://genome.ucsc.edu/s/gahanleeo/hg19_chr14_project_Waldenstrom
 
 - https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136090
 
-#### sc-RNA/atac for Waldenstrom patient
+
+**sc-RNA/atac for Waldenstrom patient**
+
 - https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296167
 
 - This dataset have some of interest dataset, trying to get bulked snATAC-seq and output as bigwig for display
